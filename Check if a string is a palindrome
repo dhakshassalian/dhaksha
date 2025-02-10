@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int palindrome(const char *word) {
+    int end = strlen(word) - 1; // Get the last index
+    int start = 0;
+
+    while (start <= end) {
+        if (word[start] != word[end]) {
+            return -1; // Return -1 if not a palindrome
+        } else {
+            start++;
+            end--;
+        }
+    }
+    return 1; // Return 1 if it is a palindrome
+}
+
+int main() {
+    char word[100]; // Buffer to hold the input word
+    printf("Enter a word: ");
+    scanf("%s", word);
+
+    int result = palindrome(word);
+    if (result == 1) {
+        printf("%s is a palindrome.\n", word);
+    } else {
+        printf("%s is not a palindrome.\n", word);
+    }
+
+    return 0
+}
