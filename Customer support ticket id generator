@@ -1,0 +1,14 @@
+import java.util.Random;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter customer name: ");
+        String customerName = scanner.nextLine();
+        Random random = new Random();
+        int randomNumber = 1000 + random.nextInt(9000);
+        String ticketID = "TKY-" + customerName + "-" + randomNumber;
+        System.out.println("Generated Ticket ID: " + ticketID);
+        scanner.close();
+    }
+}
