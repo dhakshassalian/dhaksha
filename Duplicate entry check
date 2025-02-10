@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+#define SIZE 5 // Size of the array
+
+// Function to check if an ID is unique in the array
+int isUnique(int arr[], int size, int id) {
+    int count = 0; // Counter for occurrences of the ID
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == id) {
+            count++;
+        }
+    }
+    return count == 1; // Return true if the ID is unique (occurs exactly once)
+}
+
+int main() {
+    int studentIDs[SIZE] = {1, 7, 21, 32, 49}; // Array of student IDs
+
+    // Check uniqueness for each ID in the array
+    for (int i = 0; i < SIZE; i++) {
+        if (isUnique(studentIDs, SIZE, studentIDs[i])) {
+            printf("The ID %d is unique.\n", studentIDs[i]);
+        } else {
+            printf("The ID %d is not unique.\n", studentIDs[i]);
+        }
+    }
+
+    return 0;
+}
